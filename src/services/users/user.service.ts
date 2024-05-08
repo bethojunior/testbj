@@ -5,4 +5,8 @@ export default class UserService{
     const userRepository = new UserRepository();
     return await userRepository.create(data);
   }
+  async list(){
+    const userRepository = new UserRepository();
+    return await userRepository.list();
+  }
 }

@@ -22,6 +22,15 @@ export default class UserRouterProvider {
       }
     });
 
+    router.get("/list", async (req, res) => {
+      try {
+        const users = await userController.list();
+        res.status(200).json(users);
+      } catch (error) {
+        res.status(500).json({ error: "Internal server error" + error });
+      }
+    });
+
     app.use('/api', router);
   }
 }

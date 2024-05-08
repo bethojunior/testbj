@@ -5,4 +5,8 @@ export default class UserController {
     const userService = new UserService();
     return await userService.findAll(data);
   }
+  async list() {
+    const userService = new UserService();
+    return await userService.list();
+  }
 }

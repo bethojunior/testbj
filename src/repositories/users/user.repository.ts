@@ -9,4 +9,8 @@ export default class UserRepository{
     });
   }
 
+  async list(){
+    return await prismaClient.prompt.findMany();
+  }
+
 }

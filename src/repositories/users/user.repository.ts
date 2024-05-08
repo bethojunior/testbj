@@ -10,7 +10,11 @@ export default class UserRepository{
   }
 
   async list(){
-    return await prismaClient.prompt.findMany();
+    return await prismaClient.prompt.findMany({
+      orderBy: {
+        createdAt: 'desc'
+      }
+    });
   }
 
 }

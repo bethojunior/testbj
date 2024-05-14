@@ -4,7 +4,7 @@ import UserController from "../../controllers/users/user.controller";
 const userController = new UserController();
 
 export default class UserRouterProvider {
-
+  
   exec(app: express.Application) {
 
     const router = express.Router();
@@ -24,11 +24,8 @@ export default class UserRouterProvider {
 
     router.post("/", async (req, res) => {
       try {
-        console.log(req.body);
-        const data = {
-          'field' : req.body
-        }
-        const users = await userController.store(data);
+        console.log("req.body", req.body  );
+        const users = await userController.store(req.body);
         res.status(200).json(users);
       } catch (error) {
         res.status(500).json({ error: "Internal server error" + error });

@@ -5,7 +5,9 @@ export default class UserRepository{
 
   async create(data: any){
     return await prismaClient.prompt.create({
-      data
+      data:{ 
+        field: data
+      }
     });
   }
 

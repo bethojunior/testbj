@@ -12,7 +12,6 @@ app.use(express.json());
 const userRouterProvider = new UserRouterProvider();
 userRouterProvider.exec(app);
 
-
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });

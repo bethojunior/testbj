@@ -14,7 +14,6 @@ export default class UserRouterProvider {
       };
     }
 
-
     app.get("/api/*", async (req: CustomRequest, res) => {
       const pathSegments = req.params[0].split('/');
       let jsonObject: { [key: string]: string } = {};
